@@ -6,6 +6,10 @@ Spree.Views.Images.UploadZone = Backbone.View.extend({
     'change input[type="file"]' : "onFileBrowserSelect"
   },
 
+  initialize: function () {
+    _.bindAll(this, 'upload');
+  },
+
   upload: function(file) {
     var progressModel = new Spree.Models.ImageUpload({file: file});
 
