@@ -44,7 +44,9 @@ Spree.Models.ImageUpload = Backbone.Model.extend({
       that = this;
 
     formData.append('image[attachment]', this.get('file'));
-    formData.append('image[viewable_id]', this.get('variant_id'));
+    // formData.append('image[viewable_id]', this.get('variant_id'));
+    // Get viewable_id from form input
+    formData.append('image[viewable_id]', $('#image_viewable_id').val());
     formData.append('upload_id', this.cid);
 
     // send the image to the server
